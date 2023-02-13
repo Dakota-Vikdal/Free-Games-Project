@@ -2,21 +2,25 @@
 fetch("  http://localhost:3000/games")
     .then(res => res.json())
     .then(gamesArray => {
-        // filterGenre(gamesArray),
         gamesArray.forEach( gameObj => {
             renderGame( gameObj )
         })
     })
 
 const gameCollection = document.querySelector("#game-collection")
-const allGamesBtn = document.querySelector("#all-games")
 
-const shooterBtn = document.querySelector("#shooter")
-const mmoarpgBtn = document.querySelector('#mmoarpg')
-const strategyBtn = document.querySelector('#Strategy')
+const theSelect = document.querySelector('select')
+theSelect.addEventListener('change', e => {
+    
+    document.querySelectorAll('.card').forEach(element => {
 
-
-
+    if(element.classList.contains(e.target.value)) {
+        element.style.display = 'block'
+    } else {
+        element.style.display = 'none'
+    }
+})
+})
 
 function renderGame(game) {
     const divCard = document.createElement('div')
@@ -59,3 +63,9 @@ function renderGame(game) {
 
 // shooterBtn.addEventListener('click', filterGenre)
 // console.log(shooterBtn);
+
+// const allGamesBtn = document.querySelector("#all-games")
+
+// const shooterBtn = document.querySelector("#shooter")
+// const mmoarpgBtn = document.querySelector('#mmoarpg')
+// const strategyBtn = document.querySelector('#Strategy')
