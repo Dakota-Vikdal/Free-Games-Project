@@ -19,7 +19,7 @@ const strategyBtn = document.querySelector('#Strategy')
 
 
 function renderGame(game) {
-    console.log(game)
+    const divCard = document.createElement('div')
     const img = document.createElement('img')
     const title = document.createElement('h1')
     const description = document.createElement('p')
@@ -28,6 +28,7 @@ function renderGame(game) {
     const developer = document.createElement('p')
     const releaseDate = document.createElement('p')
 
+    divCard.className = `card ${game.genre}`
     img.src = game.thumbnail
     title.textContent = game.title
     description.textContent = `About: ${game.short_description}`
@@ -36,7 +37,8 @@ function renderGame(game) {
     developer.textContent = `Developer: ${game.developer}`
     releaseDate.textContent = `Release Date: ${game.release_date}`
 
-    gameCollection.append(img, title, description, platform, publisher, developer, releaseDate)
+    divCard.append(img, title, description, platform, publisher, developer, releaseDate)
+    gameCollection.append(divCard)
 
     img.addEventListener('mouseover',e => {
         e.target.style["box-shadow"] = "10px 5px 5px red";
