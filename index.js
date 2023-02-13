@@ -22,10 +22,20 @@ function renderGame(game) {
     const img = document.createElement('img')
     const title = document.createElement('h1')
     const description = document.createElement('p')
+    const platform = document.createElement('p')
+    const publisher = document.createElement('p')
+    const developer = document.createElement('p')
+    const releaseDate = document.createElement('p')
+
     img.src = game.thumbnail
     title.textContent = game.title
-    description.textContent = game.short_description
-    gameCollection.append(img, title, description)
+    description.textContent = `About: ${game.short_description}`
+    platform.textContent = `Platform: ${game.platform}`
+    publisher.textContent = `Publisher: ${game.publisher}`
+    developer.textContent = `Developer: ${game.developer}`
+    releaseDate.textContent = `Release Date: ${game.release_date}`
+
+    gameCollection.append(img, title, description, platform, publisher, developer, releaseDate)
 
 }
 
