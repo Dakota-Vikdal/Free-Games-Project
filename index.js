@@ -2,7 +2,7 @@
 fetch("  http://localhost:3000/games")
     .then(res => res.json())
     .then(gamesArray => {
-        filterGenre(gamesArray),
+        // filterGenre(gamesArray),
         gamesArray.forEach( gameObj => {
             renderGame( gameObj )
         })
@@ -19,6 +19,7 @@ const strategyBtn = document.querySelector('#Strategy')
 
 
 function renderGame(game) {
+    console.log(game)
     const img = document.createElement('img')
     const title = document.createElement('h1')
     const description = document.createElement('p')
@@ -37,15 +38,22 @@ function renderGame(game) {
 
     gameCollection.append(img, title, description, platform, publisher, developer, releaseDate)
 
+    img.addEventListener('mouseover',e => {
+        e.target.style["box-shadow"] = "10px 5px 5px red";
+    })
+
 }
 
 
-function filterGenre(gamesArray) {
-    gamesArray.filter( gameGenre => {
-         if ( gameGenre.genre == "Shooter")
-             return console.log(gameGenre)
-     } )
+// function filterGenre(gamesArray) {
+//     gamesArray.filter( gameGenre => {
+//          if ( gameGenre.genre == "Shooter")
+//              return console.log(gameGenre)
+//      } )
      
-}
-shooterBtn.addEventListener('click', filterGenre)
-console.log(shooterBtn);
+// }
+
+
+
+// shooterBtn.addEventListener('click', filterGenre)
+// console.log(shooterBtn);
