@@ -6,7 +6,7 @@ body {
   #game-header {
     display: flex;
     justify-content: center;
-    background: #515DA2;
+    background: blue;
     opacity: .8;
     height: 7rem;
     padding: 1rem;

@@ -7,7 +7,14 @@ fetch("  http://localhost:3000/games")
         })
     })
 
+
+const gameCollection = document.querySelector("#game-collection")
+
 function renderGame(game) {
-    console.log(game)
+    const img = document.createElement('img')
+    img.src = game.thumbnail
+    gameCollection.append(img)
+    
+    
 
 }
