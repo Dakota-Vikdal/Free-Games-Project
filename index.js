@@ -47,6 +47,9 @@ function renderGame(game) {
     img.addEventListener('mouseover',e => {
         e.target.style["box-shadow"] = "10px 5px 5px red";
     })
+    img.addEventListener('mouseout', (e) => {
+        e.target.style["boxShadow"] = "10px 10px 10px 10px rgb(255,255,255)"
+    })
 
 }
 
