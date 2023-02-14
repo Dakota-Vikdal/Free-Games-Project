@@ -13,7 +13,6 @@ const theSelect = document.querySelector('select')
 theSelect.addEventListener('change', e => {
     
     document.querySelectorAll('.card').forEach(element => {
-
     if(element.classList.contains(e.target.value)) {
         element.style.display = 'block'
     } else {
