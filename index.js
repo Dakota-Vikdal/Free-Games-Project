@@ -40,14 +40,30 @@ function renderGame(game) {
     developer.textContent = `Developer: ${game.developer}`
     releaseDate.textContent = `Release Date: ${game.release_date}`
 
+
     divCard.append(img, title, description, platform, publisher, developer, releaseDate)
     gameCollection.append(divCard)
 
-    img.addEventListener('mouseover',e => {
-        e.target.style["box-shadow"] = "10px 5px 5px red";
+    title.addEventListener('mouseover',e => {
+        e.target.style["boxShadow"] = "0px 5px 5px black";
     })
-    img.addEventListener('mouseout', (e) => {
-        e.target.style["boxShadow"] = "10px 10px 10px 10px rgb(255,255,255)"
+    description.addEventListener('mouseover',e => {
+        e.target.style["boxShadow"] = "0px 5px 5px black";
+    })
+    platform.addEventListener('mouseover',e => {
+        e.target.style["boxShadow"] = "0px 5px 5px black";
+    })
+    publisher.addEventListener('mouseover',e => {
+        e.target.style["boxShadow"] = "0px 5px 5px black";
+    })
+    developer.addEventListener('mouseover',e => {
+        e.target.style["boxShadow"] = "0px 5px 5px black";
+    })
+    releaseDate.addEventListener('mouseover',e => {
+        e.target.style["boxShadow"] = "0px 5px 5px black";
+    })
+    divCard.addEventListener('mouseout', (e) => {
+        e.target.style["boxShadow"] = "0px 10px 10px 0px rgb(255, 255, 255)"
     })
 
 }

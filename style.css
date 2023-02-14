@@ -32,7 +32,7 @@ body {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
      gap: 2rem;
-     margin: 3.15rem 0;
+     margin: 20px 50px 20px;
      padding: 0;
      color: var(--c10);
      font-weight: bold;
@@ -49,6 +49,10 @@ body {
     border: grey solid 7px;
     text-align: center;
     
+   }
+   .card:hover{
+    scale: 105%;
+    transition: 0.5s
    }
   
   /* .card { */
