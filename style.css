@@ -25,8 +25,31 @@ body {
   }
   
   #game-collection {
-    margin: 2rem;
-  }
+     /* margin: 2rem; */
+
+     --decoration: currentColor;
+     --flow-space: 3.15rem;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+     gap: 2rem;
+     margin: 3.15rem 0;
+     padding: 0;
+     color: var(--c10);
+     font-weight: bold;
+     list-style: none;
+     
+     
+   }
+  
+
+   img {
+    width: 100%
+   }
+   .card {
+    border: grey solid 7px;
+    text-align: center;
+    
+   }
   
   /* .card { */
     /* text-align: center; */
