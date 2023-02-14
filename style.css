@@ -10,6 +10,18 @@
   font-size: large;
 }
 
+#game-finder-header > h1 {
+
+  margin: 0;
+  text-align: center;
+  background-color: blue;
+  text-decoration-color: #e04b52;
+  color:aliceblue
+  
+  
+}
+
+
 body {
     margin: 0;
     font-family: monospace;
@@ -19,14 +31,13 @@ body {
     display: flex;
     justify-content: center;
     background: blue;
-    opacity: .8;
     height: 7rem;
     padding: 1rem;
   }
   
   #game-header img {
     height: 6rem;
-    width: auto;
+    width: 6rem;
   }
   
   #game-collection {
