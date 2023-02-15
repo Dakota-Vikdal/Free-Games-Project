@@ -110,6 +110,14 @@ gameForm.addEventListener("submit", (e) =>{
 
     renderGame(newGameObject)
     gameForm.reset()
+
+    fetch('http://localhost:3000/games', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newGameObject)
+    });
 })
 
 
