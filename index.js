@@ -1,5 +1,12 @@
-let addGame = false;
+//global variables
+const gameCollection = document.querySelector("#game-collection")
+const theSelect = document.querySelector('select')
+const gameForm = document.querySelector(".add-game-form")
 
+
+
+//creates Form container + button display on/off
+let addGame = false;
 
 const gameFormContainer = document.querySelector(".container");
 gameFormContainer.style.display = "none"
@@ -14,6 +21,8 @@ addBtn.addEventListener("click", () => {
     addGame = !addGame;
 });
 
+//fetch our data from local host 
+
 fetch("  http://localhost:3000/games")
     .then(res => res.json())
     .then(gamesArray => {
@@ -22,20 +31,20 @@ fetch("  http://localhost:3000/games")
         })
     })
 
-const gameCollection = document.querySelector("#game-collection")
+//game card collection GENRE filter display 
 
-const theSelect = document.querySelector('select')
 theSelect.addEventListener('change', e => {
     
-    document.querySelectorAll('.card').forEach(element => {
-    if(element.classList.contains(e.target.value)) {
-        element.style.display = 'block'
-    } else {
-        element.style.display = 'none'
-    }
-})
+    document.querySelectorAll('.card').forEach(element => { 
+        if(element.classList.contains(e.target.value)) {
+            element.style.display = 'block'
+        } else {
+            element.style.display = 'none'
+        }
+    })
 })
 
+//RENDERS game cards into our game-collection container
 
 function renderGame(game) {
     const divCard = document.createElement('div')
@@ -84,9 +93,7 @@ function renderGame(game) {
 
 }
 
-
-const gameForm = document.querySelector(".add-game-form")
-
+//add new game form object
 gameForm.addEventListener("submit", (e) =>{
     e.preventDefault()
     
@@ -94,7 +101,7 @@ gameForm.addEventListener("submit", (e) =>{
         title: e.target.title.value,
         thumbnail: e.target.thumbnail.value,
         short_description: e.target.short_description.value,
-        genre: e.target.genre.value,
+        genre: e.target.genre.value.charAt(0).toUpperCase() + e.target.genre.value.slice(1),
         platform: e.target.platform.value,
         publisher: e.target.publisher.value,
         developer: e.target.developer.value,
@@ -104,3 +111,5 @@ gameForm.addEventListener("submit", (e) =>{
     renderGame(newGameObject)
     gameForm.reset()
 })
+
+
