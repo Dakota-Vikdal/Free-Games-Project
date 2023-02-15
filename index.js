@@ -36,6 +36,7 @@ theSelect.addEventListener('change', e => {
 })
 })
 
+
 function renderGame(game) {
     const divCard = document.createElement('div')
     const img = document.createElement('img')

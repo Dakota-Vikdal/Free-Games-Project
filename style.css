@@ -112,7 +112,37 @@ body {
   /* } */
 
 
-  /* .container{ */
-    /* text-align: center; */
-    /* width: 20px; */
-  /* } */
+
+
+  #new-game-btn{
+    color: black;
+    border-color: black;
+    background-color: #87CEEB;
+  }
+
+  .add-game-form{
+    width: 100%;
+    font-size: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #87CEEB;
+  }
+
+  .input-text {
+    border-radius: 5px;
+    height: 2rem;
+    width: 30%;
+    font-size: 18px;
+    font-family: 'Lucida Sans';
+    margin: 3px;
+  }
+
+  h3 {
+    font-size:xx-large;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .submit {
+    font-size: large;
+  }
