@@ -6,12 +6,12 @@ gameFormContainer.style.display = "none"
 const addBtn = document.querySelector("#new-game-btn");
   
 addBtn.addEventListener("click", () => {
-    addGame = !addGame;
     if (addGame) {
       gameFormContainer.style.display = "none";
     } else {
       gameFormContainer.style.display = "block";
     }
+    addGame = !addGame;
 });
 
 fetch("  http://localhost:3000/games")
