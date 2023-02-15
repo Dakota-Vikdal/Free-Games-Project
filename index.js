@@ -1,3 +1,18 @@
+let addGame = false;
+
+
+const gameFormContainer = document.querySelector(".container");
+gameFormContainer.style.display = "none"
+const addBtn = document.querySelector("#new-game-btn");
+  
+addBtn.addEventListener("click", () => {
+    addGame = !addGame;
+    if (addGame) {
+      gameFormContainer.style.display = "none";
+    } else {
+      gameFormContainer.style.display = "block";
+    }
+});
 
 fetch("  http://localhost:3000/games")
     .then(res => res.json())
@@ -69,21 +84,22 @@ function renderGame(game) {
 }
 
 
-// function filterGenre(gamesArray) {
-//     gamesArray.filter( gameGenre => {
-//          if ( gameGenre.genre == "Shooter")
-//              return console.log(gameGenre)
-//      } )
-     
-// }
+const gameForm = document.querySelector(".add-game-form")
 
+gameForm.addEventListener("submit", (e) =>{
+    e.preventDefault()
+    
+    let newGameObject = { 
+        title: e.target.title.value,
+        thumbnail: e.target.thumbnail.value,
+        short_description: e.target.short_description.value,
+        genre: e.target.genre.value,
+        platform: e.target.platform.value,
+        publisher: e.target.publisher.value,
+        developer: e.target.developer.value,
+        release_date: e.target.release_date.value,
+    }
 
-
-// shooterBtn.addEventListener('click', filterGenre)
-// console.log(shooterBtn);
-
-// const allGamesBtn = document.querySelector("#all-games")
-
-// const shooterBtn = document.querySelector("#shooter")
-// const mmoarpgBtn = document.querySelector('#mmoarpg')
-// const strategyBtn = document.querySelector('#Strategy')
+    renderGame(newGameObject)
+    gameForm.reset()
+})
