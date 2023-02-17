@@ -70,26 +70,26 @@ function renderGame(game) {
     gameCollection.append(divCard)
 
     title.addEventListener('mouseover',e => {
-        e.target.style["boxShadow"] = "0px 5px 5px black";
-    })
-    description.addEventListener('mouseover',e => {
-        e.target.style["boxShadow"] = "0px 5px 5px black";
-    })
-    platform.addEventListener('mouseover',e => {
-        e.target.style["boxShadow"] = "0px 5px 5px black";
-    })
-    publisher.addEventListener('mouseover',e => {
-        e.target.style["boxShadow"] = "0px 5px 5px black";
-    })
-    developer.addEventListener('mouseover',e => {
-        e.target.style["boxShadow"] = "0px 5px 5px black";
-    })
-    releaseDate.addEventListener('mouseover',e => {
-        e.target.style["boxShadow"] = "0px 5px 5px black";
-    })
-    divCard.addEventListener('mouseout', (e) => {
-        e.target.style["boxShadow"] = "0px 10px 10px 0px rgb(255, 255, 255)"
-    })
+            e.target.style.textDecoration = "underline"    
+        })
+        description.addEventListener('mouseover',e => {
+            e.target.style.textDecoration = "underline";
+        })
+        platform.addEventListener('mouseover',e => {
+            e.target.style.textDecoration = "underline";
+        })
+        publisher.addEventListener('mouseover',e => {
+            e.target.style.textDecoration = "underline";
+        })
+        developer.addEventListener('mouseover',e => {
+            e.target.style.textDecoration = "underline";
+        })
+        releaseDate.addEventListener('mouseover',e => {
+            e.target.style.textDecoration = "underline";
+        })
+        divCard.addEventListener('mouseout', (e) => {
+            e.target.style.textDecoration = "none"
+        })
 
 }
 
